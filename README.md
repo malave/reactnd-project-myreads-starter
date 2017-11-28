@@ -21,14 +21,25 @@ To get started developing right away:
 │   ├── favicon.ico # React Icon, You may change if you wish.
 │   └── index.html # DO NOT MODIFY
 └── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── api
+    │   └── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── components
+    │   ├── Book.js # renders each book UI
+    │   ├── Bookshelf.js # renders the list of book in a certain bookshelf
+    │   ├── BookshelfChanger.js # renders the option menu for each Book component
+    │   └── SearchInput.js # renders the search input for the Search container
+    ├── config
+    │   └── constants.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── containers
+    │   ├── Home.js # Container with the list of bookshelves and their respective books
+    │   └── Search.js # List the results from a search query
     ├── icons # Helpful images for your app. Use at your discretion.
     │   ├── add.svg
     │   ├── arrow-back.svg
     │   └── arrow-drop-down.svg
+    ├── App.css # Styles for your app. Feel free to customize this as you desire.
+    ├── App.js # This is the root of your app. Contains static HTML right now.
+    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
     ├── index.css # Global styles. You probably won't need to change anything here.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
 ```
@@ -37,7 +48,7 @@ Remember that good React design practice is to create new JS files for each comp
 
 ## Backend Server
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/api/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
 
 * [`getAll`](#getall)
 * [`update`](#update)
