@@ -5,8 +5,8 @@
  */
 import PropTypes from 'prop-types';
 import React from 'react';
+import noCoverFound from '../images/nove-cover-found.jpg';
 import BookshelfChanger from './BookshelfChanger';
-import noCoverFound from '../images/nove-cover-found.jpg'
 
 class Book extends React.Component {
     constructor() {
@@ -31,6 +31,7 @@ class Book extends React.Component {
     render() {
         const { book } = this.props;
         const backgroundImage = book.imageLinks ? book.imageLinks.thumbnail : noCoverFound;
+        const authors = book.authors ? book.authors.map(this.renderAuthor) : '';
         return (
             <div className="book">
                 <div className="book-top">
@@ -38,7 +39,7 @@ class Book extends React.Component {
                     <BookshelfChanger bookshelf={book.shelf} onBookshelfChange={this.onBookshelfChange} />
                 </div>
                 <div className="book-title">{book.title}</div>
-                {book.authors && book.authors.map(this.renderAuthor)}
+                {authors}
             </div>
         );
     }
